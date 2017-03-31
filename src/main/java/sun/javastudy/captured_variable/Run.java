@@ -14,25 +14,23 @@ public class Run {
 
         printDog(dogList);
 
-        // 변수 포획
-        /*
+        // 익명 클래스
         dogList.sort(new Comparator<Dog>() {
             @Override
             public int compare(Dog o1, Dog o2) {
                 return o1.compareTo(o2);
             }
         });
-        */
 
         // Lambda
-        dogList.sort((Dog o1, Dog o2) -> o1.compareTo(o2));
+        //dogList.sort((Dog o1, Dog o2) -> o1.compareTo(o2));
 
         System.out.println("======================정렬===================");
 
         printDog(dogList);
     }
 
-    public static List<Dog> addDog() {
+    private static List<Dog> addDog() {
         List<Dog> dogList = new ArrayList<Dog>();
         Dog dog1 = new Dog();
         Dog dog2 = new Dog();
@@ -57,7 +55,7 @@ public class Run {
         return dogList;
     }
 
-    public static void printDog(List<Dog> dogList) {
+    private static void printDog(List<Dog> dogList) {
         for (Dog dog : dogList) {
             System.out.println(dog.getName() + " : " + dog.getAge());
         }

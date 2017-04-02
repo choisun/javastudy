@@ -10,24 +10,22 @@ import java.util.List;
 public class Run {
 
     public static void main(String[] args) {
-        List<Dog> dogList = addDog();
-
-        printDog(dogList);
-
         // 익명 클래스
+        List<Dog> dogList = addDog();
+        printDog(dogList);
         dogList.sort(new Comparator<Dog>() {
             @Override
             public int compare(Dog o1, Dog o2) {
                 return o1.compareTo(o2);
             }
         });
-
         // Lambda
         //dogList.sort((Dog o1, Dog o2) -> o1.compareTo(o2));
-
         System.out.println("======================정렬===================");
-
         printDog(dogList);
+
+        // 변수 포획
+
     }
 
     private static List<Dog> addDog() {

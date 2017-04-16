@@ -30,17 +30,17 @@ public class RunStream {
         Stream<String> stream4 = Stream.generate(() -> "Stream") // 무한 스트림을 만드는 generate 정적 메서드
                 .limit(3)
                 .distinct();
-        //Stream<Double> stream5 = Stream.generate(Math::random); // 무한
-        //Stream<BigInteger> stream6 = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE)); //무한
+        Stream<Double> stream5 = Stream.generate(Math::random); // 무한
+        Stream<BigInteger> stream6 = Stream.iterate(BigInteger.ZERO, n -> n.add(BigInteger.ONE)); //무한
 
-//        Stream<String> concatStream = Stream.concat(stream1, stream2);
+        Stream<String> concatStream = Stream.concat(stream1, stream2);
 
 
-//        stream1.forEach(n -> System.out.println(n));
-//        stream2.forEach(n -> System.out.println(n));
-//        stream3.forEach(n -> System.out.println(n));
-//        stream4.forEach(n -> System.out.println(n));
-//        concatStream.forEach(n -> System.out.println(n));
+        stream1.forEach(n -> System.out.println(n));
+        stream2.forEach(n -> System.out.println(n));
+        stream3.forEach(n -> System.out.println(n));
+        stream4.forEach(n -> System.out.println(n));
+        concatStream.forEach(n -> System.out.println(n));
 
         long count = stream3.count();
         Optional<String> max = stream2.max(String::compareToIgnoreCase);
